@@ -41,6 +41,10 @@ app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
+app.get('/healthcheck', function (req, res) {
+    res.send(200);
+});
+
 app.get('/config', function (req, res) {
     fs.readFile(path.join(__dirname, 'server.properties'), function (error, result) {
         if (error) return res.send(500, error);

@@ -5,8 +5,8 @@
   "tagline": "Minecraft is a game about breaking and placing blocks.",
   "version": "0.1.0",
   "dockerImage": "nebulon/img-79dbfd46-e93a-4d39-9fb5-e8ae32f5ddad",
-  "healthCheckPath": "/",
-  "httpPort": 80,
+  "healthCheckPath": "/healthcheck",
+  "httpPort": 3000,
   "tcpPorts": {
     "SERVER_PORT": {
       "title": "Server Port",
