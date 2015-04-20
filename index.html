@@ -39,6 +39,17 @@ $(function() {
     $.get('/config', function (result) {
         $('#configTextarea').val(result);
     });
+
+    $('#opsButton').click(function () {
+        $.post('/ops', { ops: $('#opsTextarea').val() }, function (result) {
+            console.log(result);
+        });
+    });
+
+    $.get('/ops', function (result) {
+        console.log(result)
+        $('#opsTextarea').val(result);
+    });
 });
 
 </script>
@@ -56,11 +67,18 @@ $(function() {
 
 <p>
     <h4>Configuration:</h4>
-    <textarea id="configTextarea" cols="100" rows="30"></textarea>
+    <textarea id="configTextarea" cols="60" rows="30"></textarea>
     <br/>
     <button id="configButton">Save and Restart</button>
 </p>
 
+<p>
+    <h4>Server Admins:</h4>
+    One username per line.<br/>
+    <textarea id="opsTextarea" cols="60" rows="5"></textarea>
+    <br/>
+    <button id="opsButton">Save and Restart</button>
+</p>
 
 </body>
 </html>

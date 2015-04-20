@@ -6,6 +6,8 @@ var express = require('express'),
     fs = require('fs');
 
 var minecraft = null;
+var configFilePath = path.join(__dirname, 'server.properties');
+var opsFilePath = path.join(__dirname, 'ops.txt');
 
 function startMinecraft() {
     console.log('start minecraft server');
@@ -46,7 +48,7 @@ app.get('/healthcheck', function (req, res) {
 });
 
 app.get('/config', function (req, res) {
-    fs.readFile(path.join(__dirname, 'server.properties'), function (error, result) {
+    fs.readFile(configFilePath, function (error, result) {
         if (error) return res.send(500, error);
 
         res.send(200, result);
@@ -55,7 +57,27 @@ app.get('/config', function (req, res) {
 
 app.post('/config', function (req, res) {
     stopMinecraft(function () {
-        fs.writeFile(path.join(__dirname, 'server.properties'), req.body.config, function (error) {
+        fs.writeFile(configFilePath, req.body.config, function (error) {
+            if (error) res.send(500, error);
+
+            startMinecraft();
+
+            res.send(200);
+        });
+    });
+});
+
+app.get('/ops', function (req, res) {
+    fs.readFile(opsFilePath, function (error, result) {
+        if (error) return res.send(500, error);
+
+        res.send(200, result);
+    });
+});
+
+app.post('/ops', function (req, res) {
+    stopMinecraft(function () {
+        fs.writeFile(opsFilePath, req.body.ops, function (error) {
             if (error) res.send(500, error);
 
             startMinecraft();
