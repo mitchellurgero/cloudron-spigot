@@ -4,7 +4,7 @@
   "description": "Minecraft is a game about breaking and placing blocks. At first, people built structures to protect against nocturnal monsters, but as the game grew players worked together to create wonderful, imaginative things. ",
   "tagline": "Minecraft is a game about breaking and placing blocks.",
   "version": "0.1.0",
-  "dockerImage": "nebulon/img-79dbfd46-e93a-4d39-9fb5-e8ae32f5ddad",
+  "dockerImage": "nebulon/img-c1607eb4-31b7-4a7a-ade9-ddbe4b8ff9be",
   "healthCheckPath": "/healthcheck",
   "httpPort": 3000,
   "tcpPorts": {
