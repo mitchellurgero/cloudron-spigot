@@ -1,4 +1,4 @@
-FROM girish/base:0.1.0
+FROM cloudron/base:0.3.0
 MAINTAINER Johannes Zellner <johannes@nebulon.de>
 
 ENV DEBIAN_FRONTEND noninteractive
