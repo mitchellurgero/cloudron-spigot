@@ -20,7 +20,7 @@
   "manifestVersion": 1,
   "website": "https://minecraft.net/",
   "contactEmail": "support@cloudron.io",
-  "icon": "icon.png",
+  "icon": "file://logo.png",
   "mediaLinks": [],
   "addons": {
     "localstorage": {}
