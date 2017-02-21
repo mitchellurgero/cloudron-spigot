@@ -6,13 +6,13 @@ var express = require('express'),
     fs = require('fs');
 
 var minecraft = null;
-var configFilePath = path.join(__dirname, 'server.properties');
-var opsFilePath = path.join(__dirname, 'ops.txt');
+var configFilePath = path.join('/app/data/', 'server.properties');
+var opsFilePath = path.join('/app/data/', 'ops.txt');
 
 function startMinecraft() {
     console.log('start minecraft server');
 
-    minecraft = require('child_process').spawn('java', ['-Xmx1024M', '-Xms1024M', '-jar', path.join(__dirname, 'minecraft_server.jar'), 'nogui']);
+    minecraft = require('child_process').spawn('java', ['-Xmx1024M', '-Xms1024M', '-jar', path.join(__dirname, 'minecraft_server.jar'), 'nogui'], { cwd: '/app/data/' });
 
     minecraft.stdout.pipe(process.stdout);
     minecraft.stderr.pipe(process.stderr);

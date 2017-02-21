@@ -12,4 +12,4 @@ COPY eula.txt index.js index.html package.json /app/code/
 
 RUN npm install
 
-CMD [ "node", "index.js" ]
+CMD [ "/app/code/start.sh" ]
