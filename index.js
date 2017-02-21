@@ -44,61 +44,61 @@ app.get('/', function (req, res) {
 });
 
 app.get('/healthcheck', function (req, res) {
-    res.send(200);
+    res.sendStatus(200);
 });
 
 app.get('/config', function (req, res) {
     fs.readFile(configFilePath, function (error, result) {
-        if (error) return res.send(500, error);
+        if (error) return res.status(500).send(error);
 
-        res.send(200, result);
+        res.sendStatus(200, result);
     });
 });
 
 app.post('/config', function (req, res) {
     stopMinecraft(function () {
         fs.writeFile(configFilePath, req.body.config, function (error) {
-            if (error) res.send(500, error);
+            if (error) return res.status(500).send(error);
 
             startMinecraft();
 
-            res.send(200);
+            res.sendStatus(200);
         });
     });
 });
 
 app.get('/ops', function (req, res) {
     fs.readFile(opsFilePath, function (error, result) {
-        if (error) return res.send(500, error);
+        if (error) return res.status(500).send(error);
 
-        res.send(200, result);
+        res.status(200).send(result);
     });
 });
 
 app.post('/ops', function (req, res) {
     stopMinecraft(function () {
         fs.writeFile(opsFilePath, req.body.ops, function (error) {
-            if (error) res.send(500, error);
+            if (error) res.status(500).send(error);
 
             startMinecraft();
 
-            res.send(200);
+            res.sendStatus(200);
         });
     });
 });
 
 app.get('/status', function (req, res) {
-    res.send(200, { running: !!minecraft });
+    res.status(200).send({ running: !!minecraft });
 });
 
 app.post('/start', function (req, res) {
     startMinecraft();
-    res.send(200);
+    res.sendStatus(200);
 });
 
 app.post('/stop', function (req, res) {
     stopMinecraft(function () {
-        res.send(200);
+        res.sendStatus(200);
     });
 });
 

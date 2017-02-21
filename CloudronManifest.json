@@ -6,9 +6,8 @@
   "tagline": "Minecraft is a game about breaking and placing blocks.",
   "version": "0.1.0",
   "healthCheckPath": "/healthcheck",
-  "tags": [
-    "game"
-  ],
+  "tags": [ "game", "multiplayer" ],
+  "memoryLimit": 1048576000,
   "httpPort": 3000,
   "tcpPorts": {
     "SERVER_PORT": {
