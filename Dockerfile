@@ -1,12 +1,11 @@
-FROM cloudron/base:0.10.0
-MAINTAINER Johannes Zellner <johannes@nebulon.de>
+FROM cloudron/base:1.0.0
 
 RUN mkdir -p /app/code
 WORKDIR /app/code
 
-ENV PATH /usr/local/node-4.7.3/bin:$PATH
+RUN apt-get update && apt-get install -y openjdk-11-jre-headless
 
-RUN curl -L https://s3.amazonaws.com/Minecraft.Download/versions/1.11.2/minecraft_server.1.11.2.jar -o minecraft_server.jar
+RUN curl -L https://launcher.mojang.com/v1/objects/3737db93722a9e39eeada7c27e7aca28b144ffa7/server.jar -o minecraft_server.jar
 
 COPY eula.txt index.js index.html package.json start.sh /app/code/
 

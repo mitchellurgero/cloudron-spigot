@@ -1,0 +1,157 @@
+
+@font-face {
+    font-family: 'Minecraft';
+    src: url('/fonts/mcfont.eot');
+    src: url('/fonts/mcfont.woff') format('woff'),
+         url('/fonts/mcfont.ttf')  format('truetype'),
+         url('/fonts/mcfont.svg#svgFontName') format('svg');
+}
+
+
+html, body {
+    height: 100%;
+    font-family: Minecraft;
+    text-shadow: 3px 3px #4C4C4C;
+    color: white;
+    margin: 0;
+    color: rgb(187, 189, 194);
+    background: transparent url('/img/body-bg.png') repeat;
+    font-size: 16px;
+    line-height: 40px;
+}
+
+header {
+    color: white;
+    padding: 10px;
+}
+
+a {
+    color: #FFFFA0 !important;
+    text-decoration: none;
+}
+
+.pull-right {
+    float: right;
+}
+
+header > h1 {
+    margin: 0;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: normal;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+}
+
+.inactive {
+    color: red;
+}
+
+.active {
+    color: greenyellow;
+}
+
+button {
+    height: 40px;
+    min-width: 200px;
+    outline: 2px solid black;
+    position: relative;
+    margin: 0;
+    display: inline-block;
+    background-image: url('/img/button_center.png');
+    background-repeat: repeat;
+    padding: 0;
+    font-family: Minecraft;
+    text-align: center;
+    color: white;
+    text-shadow: 3px 3px #4C4C4C;
+    border-bottom: 4px solid #565656;
+    border-right: 2px solid #565656;
+    border-left: 2px solid #AAA;
+    border-top: 2px solid #AAA;
+    box-sizing: border-box;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    border-bottom: 4px solid #59639A;
+    border-right: 2px solid #59639A;
+    border-left: 2px solid #BDC6FF;
+    border-top: 2px solid #BDC6FF;
+    background-image: url('/img/button_active_center.png');
+    color: #FFFFA0;
+}
+
+input {
+    background-color: black;
+    border-color: #888787;
+    border-style: solid;
+    border-width: 2px;
+    height: 40px;
+    font-family: Minecraft;
+    font-size: 16px;
+    color: white;
+    padding: 10px;
+}
+
+input:focus, textarea:focus {
+    border-color: white;
+}
+
+textarea {
+    background-color: black;
+    border-color: #4C4C4C;
+    border-style: solid;
+    border-width: 2px;
+    font-family: Minecraft;
+    font-size: 16px;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    min-height: 300px;
+}
+
+.logout {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+
+.login input, .login button {
+    width: 100%;
+}
+
+.logstream {
+    width: 100%;
+    height: 400px;
+    overflow: auto;
+    background-color: black;
+}
+
+.logstream > p {
+    font-family: Minecraft;
+    text-shadow: none;
+    line-height: normal;
+    font-size: 14px;
+    color: white;
+    margin: 0;
+}
+
+.command {
+    width: 100%;
+    font-size: 14px;
+}
+
+.command::before {
+    content: '>'
+}

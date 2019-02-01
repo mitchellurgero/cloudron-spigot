@@ -1,0 +1,52 @@
+<html>
+<head>
+    <title> Minecraft Server </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" href="/css/index.css">
+
+    <script src="/js/vue.js"></script>
+    <script src="/js/superagent.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+
+</head>
+<body>
+
+<div id="app">
+  <header>
+    <h1>Minecraft Server</h1>
+  </header>
+  <div v-if="profile" class="container">
+    <p>
+      Server Status: <span style="padding-left: 20px;" :class="{ active: status.running, inactive: !status.running }">{{ status.running ? 'Running' : 'Stopped' }}</span>
+      <button v-show="!status.running" class="pull-right" @click="start()">Start</button>
+      <button v-show="status.running" class="pull-right" @click="stop()">Stop</button>
+    </p>
+    <!-- <p>Settings:</p>
+      <textarea v-model="settings"></textarea>
+      <button>Save</button> -->
+    <div class="logstream">
+      <p v-for="line in logstream">{{ line }}</p>
+    </div>
+    <input type="text" v-model="cmd" placeholder="Send server commands here, try /help" class="command" @keyup.enter="sendCommand()"/>
+  </div>
+  <div v-else class="container login" style="max-width: 400px;">
+    <form @submit.prevent="onLogin">
+      <p>Username</p>
+      <input type="text" v-model="login.username" required/>
+      <p>Password</p>
+      <input type="password" v-model="login.password" required/>
+      <p><button type="submit" @click="onLogin" :disabled="loginSubmitBusy">Login</button></p>
+    </form>
+  </div>
+  <footer style="height: 24px">Built by the <a href="https://cloudron.io" target="_blank">Cloudron.io</a> team</footer>
+  <button v-if="profile" @click="onLogout" class="logout">Logout</button>
+</div>
+
+<script src="/js/index.js"></script>
+
+</body>
+</html>
