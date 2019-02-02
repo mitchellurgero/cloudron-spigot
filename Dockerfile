@@ -9,7 +9,7 @@ RUN curl -L https://launcher.mojang.com/v1/objects/3737db93722a9e39eeada7c27e7ac
 
 COPY frontend /app/code/frontend
 COPY backend /app/code/backend
-COPY eula.txt index.js package.json package-lock.json start.sh /app/code/
+COPY index.js package.json package-lock.json start.sh /app/code/
 
 RUN npm install
 
