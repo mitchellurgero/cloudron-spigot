@@ -8,5 +8,8 @@ mkdir -p /app/data/
 echo "=> Accept EULA"
 echo "eula=true" > /app/data/eula.txt
 
+echo "=> Ensure permissions"
+chown -R cloudron:cloudron /app/data
+
 echo "=> Starting management server"
-node /app/code/index.js
+exec /usr/local/bin/gosu cloudron:cloudron node /app/code/index.js
