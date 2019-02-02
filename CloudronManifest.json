@@ -2,9 +2,11 @@
   "id": "net.minecraft.cloudronapp",
   "title": "Minecraft Server",
   "author": "Mojang",
-  "description": "Minecraft is a game about breaking and placing blocks. At first, people built structures to protect against nocturnal monsters, but as the game grew players worked together to create wonderful, imaginative things. ",
-  "tagline": "Minecraft is a game about breaking and placing blocks.",
-  "version": "0.1.0",
+  "description": "file://DESCRIPTION.md",
+  "icon": "file://logo.png",
+  "changelog": "file://CHANGELOG",
+  "tagline": "Multiplayer Server for Minecraft",
+  "version": "1.0.0",
   "healthCheckPath": "/api/v1/healthcheck",
   "tags": [ "game", "multiplayer" ],
   "memoryLimit": 1048576000,
@@ -19,8 +21,9 @@
   "manifestVersion": 1,
   "website": "https://minecraft.net/",
   "contactEmail": "support@cloudron.io",
-  "icon": "file://logo.png",
-  "mediaLinks": [],
+  "mediaLinks": [
+    "https://s3.amazonaws.com/cloudron-app-screenshots/net.minecraft.cloudronapp/2e986e7d52a3abf2f68cec5704b1717e8d2de8bc/minecraft-01.png"
+  ],
   "addons": {
     "localstorage": {},
     "ldap": {}
