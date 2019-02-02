@@ -4,6 +4,7 @@ minecraft_server.jar
 users.json
 server.properties
 whitelist.json
+usercache.json
 ops.json
 banned-ips.json
 banned-players.json

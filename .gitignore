@@ -7,5 +7,6 @@ whitelist.json
 ops.json
 banned-ips.json
 banned-players.json
+usercache.json
 logs/
 eula.txt
