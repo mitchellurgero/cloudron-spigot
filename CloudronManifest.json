@@ -9,7 +9,7 @@
   "version": "1.0.0",
   "healthCheckPath": "/api/v1/healthcheck",
   "tags": [ "game", "multiplayer" ],
-  "memoryLimit": 1048576000,
+  "memoryLimit": 1342177280,
   "httpPort": 3000,
   "tcpPorts": {
     "SERVER_PORT": {
