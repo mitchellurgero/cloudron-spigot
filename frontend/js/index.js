@@ -19,7 +19,7 @@ new Vue({
     },
     methods: {
         onError: function (error) {
-            console.error(error);
+            console.log(error);
         },
         onReady: function () {
             this.refresh();

@@ -36,7 +36,7 @@
   <div v-else class="container login" style="max-width: 400px;">
     <form @submit.prevent="onLogin">
       <p>Username</p>
-      <input type="text" v-model="login.username" required/>
+      <input type="text" v-model="login.username" ref="loginInput" required/>
       <p>Password</p>
       <input type="password" v-model="login.password" required/>
       <p><button type="submit" @click="onLogin" :disabled="loginSubmitBusy">Login</button></p>
