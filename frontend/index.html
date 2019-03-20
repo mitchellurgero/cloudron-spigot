@@ -15,7 +15,7 @@
 </head>
 <body>
 
-<div id="app">
+<div id="app" v-cloak>
   <header>
     <h1>Minecraft Server</h1>
   </header>
@@ -34,7 +34,7 @@
     <input type="text" v-model="cmd" placeholder="Send server commands here, try /help" class="command" @keyup.enter="sendCommand()"/>
   </div>
   <div v-else class="container login" style="max-width: 400px;">
-    <form @submit.prevent="onLogin">
+    <form @submit.prevent="onLogin" v-show="!loading">
       <p>Username</p>
       <input type="text" v-model="login.username" ref="loginInput" required/>
       <p>Password</p>

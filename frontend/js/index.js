@@ -15,7 +15,8 @@ new Vue({
         settings: '',
         logstream: [],
         cmd: '',
-        profile: null
+        profile: null,
+        loading: false
     },
     methods: {
         onError: function (error) {
@@ -131,7 +132,11 @@ new Vue({
             return;
         }
 
+        that.loading = true;
+
         superagent.get('/api/v1/profile').auth(that.login.username, that.login.password).end(function (error, result) {
+            that.loading = false;
+
             if (error && error.status === 401) {
                 // clear the local storage on wrong credentials
                 delete window.localStorage.username;

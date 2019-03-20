@@ -7,6 +7,9 @@
          url('/fonts/mcfont.svg#svgFontName') format('svg');
 }
 
+[v-cloak] {
+    display: none
+}
 
 html, body {
     height: 100%;
