@@ -18,7 +18,8 @@
       "defaultValue": 25565
     }
   },
-  "manifestVersion": 1,
+  "manifestVersion": 2,
+  "minBoxVersion": "4.1.5",
   "website": "https://minecraft.net/",
   "contactEmail": "support@cloudron.io",
   "mediaLinks": [

@@ -26,8 +26,8 @@ module.exports = exports = {
     command: command
 };
 
-const LDAP_URL = process.env.LDAP_URL;
-const LDAP_USERS_BASE_DN = process.env.LDAP_USERS_BASE_DN;
+const LDAP_URL = process.env.CLOUDRON_LDAP_URL;
+const LDAP_USERS_BASE_DN = process.env.CLOUDRON_LDAP_USERS_BASE_DN;
 const LOCAL_AUTH_FILE = path.resolve('users.json');
 
 const baseDir = process.env.CLOUDRON ? '/app/data' : path.join(__dirname, '..')
@@ -70,16 +70,16 @@ function auth(req, res, next) {
     }
 
     if (AUTH_METHOD === 'ldap') {
-        var ldapClient = ldapjs.createClient({ url: process.env.LDAP_URL });
+        var ldapClient = ldapjs.createClient({ url: LDAP_URL });
         ldapClient.on('error', function (error) {
             console.error('LDAP error', error);
         });
 
-        ldapClient.bind(process.env.LDAP_BIND_DN, process.env.LDAP_BIND_PASSWORD, function (error) {
+        ldapClient.bind(process.env.CLOUDRON_LDAP_BIND_DN, process.env.CLOUDRON_LDAP_BIND_PASSWORD, function (error) {
             if (error) return next(new HttpError(500, error));
 
             var filter = `(|(uid=${credentials.name})(mail=${credentials.name})(username=${credentials.name})(sAMAccountName=${credentials.name}))`;
-            ldapClient.search(process.env.LDAP_USERS_BASE_DN, { filter: filter }, function (error, result) {
+            ldapClient.search(process.env.CLOUDRON_LDAP_USERS_BASE_DN, { filter: filter }, function (error, result) {
                 if (error) return next(new HttpError(500, error));
 
                 var items = [];
