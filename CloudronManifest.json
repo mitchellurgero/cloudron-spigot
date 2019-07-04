@@ -6,7 +6,7 @@
   "icon": "file://logo.png",
   "changelog": "file://CHANGELOG",
   "tagline": "Multiplayer Server for Minecraft",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "healthCheckPath": "/api/v1/healthcheck",
   "tags": [ "game", "multiplayer" ],
   "memoryLimit": 1342177280,

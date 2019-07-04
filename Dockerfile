@@ -5,7 +5,8 @@ WORKDIR /app/code
 
 RUN apt-get update && apt-get install -y openjdk-11-jre-headless
 
-RUN curl -L https://launcher.mojang.com/v1/objects/3737db93722a9e39eeada7c27e7aca28b144ffa7/server.jar -o minecraft_server.jar
+# https://www.minecraft.net/de-de/download/server/
+RUN curl -L https://launcher.mojang.com/v1/objects/d0d0fe2b1dc6ab4c65554cb734270872b72dadd6/server.jar -o minecraft_server.jar
 
 COPY frontend /app/code/frontend
 COPY backend /app/code/backend
