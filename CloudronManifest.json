@@ -1,12 +1,12 @@
 {
-  "id": "net.minecraft.cloudronapp",
-  "title": "Minecraft Server",
-  "author": "Mojang",
+  "id": "org.urgero.spigot",
+  "title": "Spigot Server",
+  "author": "Mojang / Spigot",
   "description": "file://DESCRIPTION.md",
   "icon": "file://logo.png",
   "changelog": "file://CHANGELOG",
   "tagline": "Multiplayer Server for Minecraft",
-  "version": "1.1.0",
+  "version": "1.14.4",
   "healthCheckPath": "/api/v1/healthcheck",
   "tags": [ "game", "multiplayer" ],
   "memoryLimit": 1342177280,
@@ -20,7 +20,7 @@
   },
   "manifestVersion": 2,
   "minBoxVersion": "4.1.5",
-  "website": "https://minecraft.net/",
+  "website": "https://spigotmc.org/",
   "contactEmail": "support@cloudron.io",
   "mediaLinks": [
     "https://s3.amazonaws.com/cloudron-app-screenshots/net.minecraft.cloudronapp/2e986e7d52a3abf2f68cec5704b1717e8d2de8bc/minecraft-01.png"

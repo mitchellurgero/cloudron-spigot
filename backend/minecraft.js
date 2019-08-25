@@ -24,8 +24,9 @@ function start() {
 
     var opts = { cwd: path.join(__dirname, '..') };
     if (process.env.CLOUDRON) opts.cwd = '/app/data';
-
-    minecraft = require('child_process').spawn('java', ['-Xmx1024M', '-Xms1024M', '-jar', path.join(__dirname, '../minecraft_server.jar'), 'nogui'], opts);
+    
+    // This line needs to change with each version number.
+    minecraft = require('child_process').spawn('java', ['-Xmx1024M', '-Xms1024M', '-jar', path.join(__dirname, '../spigot-1.14.4.jar'), 'nogui'], opts);
 
     logLineStream = byline(minecraft.stdout);
     logLineStream.on('data', function (line) {

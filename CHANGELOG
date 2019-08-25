@@ -1,6 +1,2 @@
-[1.0.0]
-* Initial release
-
-[1.1.0]
-* Update to server version 1.14.3
-* Update to Cloudron manifest v2
+[1.14.4]
+- Spigot version 1.14.4 (Minecraft Server version 1.14.4 as well)
